@@ -1,0 +1,85 @@
+# Xcode
+DerivedData/
+build/
+*.xcworkspace
+!default.xcworkspace
+*.xcuserdatad/*
+!*.xcuserdatad/WorkspaceSettings.xcsettings
+*.xcscmblueprint
+
+# User settings
+*.xcuserdata/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+
+# Swift Package Manager
+/.build/
+/Packages/
+/Package.pins
+Package.resolved
+
+# CocoaPods
+Pods/
+/Podfile.lock
+# If using use_frameworks! uncomment next line
+# Manifest.lock
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+.fastlane/
+
+# Code coverage
+*.xccoverage
+*.gcov
+*.gcda
+*.gcno
+
+# Archives
+*.xcarchive
+
+# App packaging
+*.ipa
+*.app.dSYM.zip
+*.dSYM.zip
+
+# Playground
+timeline.xctimeline
+playground.xcworkspace
+
+# Xcode Server
+integration/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon must end with two \r
+Icon
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Temporary files
+*.swp
+*~
+.project
+.settings/
+.idea/
