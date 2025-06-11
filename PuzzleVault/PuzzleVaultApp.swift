@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct PuzzleVaultApp: App {
@@ -13,8 +14,8 @@ struct PuzzleVaultApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            MenuView()
+                .environment(\.coreDataContext, persistenceController.container.viewContext)
         }
     }
 }

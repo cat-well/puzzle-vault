@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct CellView: View {
+    let value: Int
+    let size: CGFloat = 36
+    let isFixed: Bool
+    
+    var displayText: String {
+        value == 0 ? "" : "\(value)"
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(displayText)
+            .frame(width: size, height: size)
+            .background(isFixed ? Color.gray.opacity(0.4) : Color.white)
+            .border(Color.black, width: 0.5)
+            .font(.body.bold())
+            .foregroundColor(isFixed ? .black : .white)
     }
 }
 
 #Preview {
-    CellView()
+    CellView(value: 3, isFixed: false)
 }

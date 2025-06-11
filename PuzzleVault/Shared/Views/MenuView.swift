@@ -6,10 +6,33 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MenuView: View {
+    @Environment(\.coreDataContext) private var viewContext: NSManagedObjectContext
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                NavigationLink(destination: SudokuGameView()) {
+                    Text("Sudoku")
+                }
+                // Future puzzles
+                // NavigationLink(destination: OtherPuzzleView()) { Text("Other Puzzle") }
+            }
+            .navigationTitle("Puzzle Vault")
+        }
+    }
+}
+
+private struct CoreDataContextKey: EnvironmentKey {
+    static let defaultValue: NSManagedObjectContext = PersistenceController.shared.container.viewContext
+}
+
+extension EnvironmentValues {
+    var coreDataContext: NSManagedObjectContext {
+        get { self[CoreDataContextKey.self] }
+        set { self[CoreDataContextKey.self] = newValue }
     }
 }
 
